@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grocery_app_indigo">#3F51B5</color>
+    <color name="grocery_app_dark_indigo">#302F95</color>
+    <color name="list_title_background">#9FA8DA</color>
+    <color name ="main_list_on_click">#B39DDB</color>
+    <color name ="main_list_on_focus">#EDE7F6</color>
+</resources>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroller"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:weightSum="1">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/list_title"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_height"
+            android:background="#07000000"
+            android:elevation="5dp"
+            android:layout_weight=".7"
+            android:hint="@string/list_title" />
+        <CheckBox
+            android:id="@+id/is_default"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_height"
+            android:checked="false"
+            android:text="@string/is_default"
+            android:layout_weight=".3"/>
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <AutoCompleteTextView
+                android:id="@+id/list_item"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/default_height"
+                android:layout_weight=".8"
+                android:background="#07000000"
+                android:elevation="5dp"
+                android:hint="@string/list_items" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".2"
+                android:id="@+id/add_new_item_pic"
+                android:src="@drawable/ic_action_new_picture" />
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/brand"
+android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/default_height"
+                android:layout_weight="1"
+                android:elevation="5dp"
+                android:hint="@string/brand" />
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="0dp"
+                android:visibility="gone"
+                android:layout_height="@dimen/default_height"
+
+                android:layout_weight="1"
+                android:elevation="5dp"
+                android:hint="@string/weight" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/comments"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/default_height"
+            android:elevation="5dp"
+            android:hint="@string/comments" />
+
+
+
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/listitems_detail_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.raghavendrashreedhara.list.activity.AddListActivity"
+            tools:ignore="MergeRootFrame" />
+
+
+    </LinearLayout>
+</ScrollView>

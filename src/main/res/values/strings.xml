@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Shopping Assistant</string>
+
+    <string name="title_section1">All lists </string>
+    <string name="title_section2">Default</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+
+    <string name="action_settings">Settings</string>
+    <string name="action_add">Add List</string>
+    <string name="list_title">Title</string>
+    <string name="list_items">Item name</string>
+
+    <string name="weight">Qty/Lb</string>
+    <string name="comments">Comments</string>
+    <string name="brand">Brand name</string>
+
+    <string name="is_default">Default</string>
+    <!-- content provider authority name -->
+
+    <string name="content_authority">com.example.raghavendrashreedhara.list</string>
+    <!-- Action bar names - activity title-->
+    <string name="Add_list">Add List</string>
+    <integer name="column_count">2</integer>
+    <string name="title_activity_display_list_items">DisplayListItems</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_list_items_display">ListItemsDisplayActivity</string>
+
+    <string name="add_new_item">List item</string>
+    <!--menu items -->
+    <string name="action_edit">Edit List</string>
+    <string name="action_done">Done</string>
+    <string name="action_set_reminder">Set Reminder</string>
+    <string name="action_delete">Delete</string>
+</resources>

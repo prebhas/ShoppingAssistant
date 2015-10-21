@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_header_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/list_name_header_editText"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/default_height"
+        android:layout_marginRight="20dp"
+        android:background="@null"
+        android:focusable="true"
+        android:imeOptions="actionDone"
+
+        android:singleLine="true"
+        android:text="List name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>

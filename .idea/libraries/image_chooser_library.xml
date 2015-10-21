@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="image-chooser-library">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/image-chooser-library.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
