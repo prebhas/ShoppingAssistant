@@ -1,7 +1,6 @@
 package com.example.raghavendrashreedhara.list.activity;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
@@ -26,7 +25,6 @@ import com.example.raghavendrashreedhara.list.fragment.DisplayListItemsInAddFrag
 import com.example.raghavendrashreedhara.list.loader.ListsLoader;
 import com.example.raghavendrashreedhara.list.utility.Constants;
 import com.example.raghavendrashreedhara.list.utility.ShoppingList;
-import com.example.raghavendrashreedhara.list.utility.TestListAndListItemsCreate;
 import com.example.raghavendrashreedhara.list.utility.Utils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -114,12 +112,12 @@ public class AddListActivity extends ActionBarActivity implements ImageChooserLi
 
     }
 
-    private void testDataInsert(Context ctx) {
-        TestListAndListItemsCreate.testInsertList(ctx);
-        TestListAndListItemsCreate.testInsertListItems(ctx);
-        finish();
-
-    }
+//    private void testDataInsert(Context ctx) {
+//        TestListAndListItemsCreate.testInsertList(ctx);
+//        TestListAndListItemsCreate.testInsertListItems(ctx);
+//        finish();
+//
+//    }
 
     private void displayAddItemsFragment() {
         mFragment = new DisplayListItemsInAddFragment();

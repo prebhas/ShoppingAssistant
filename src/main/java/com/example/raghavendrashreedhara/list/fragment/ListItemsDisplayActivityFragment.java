@@ -131,16 +131,15 @@ public class ListItemsDisplayActivityFragment extends Fragment {
             }
             break;
             case R.id.action_set_reminder:
-                if(item.getIcon().equals(R.drawable.ic_access_alarm_white_48dp)) {
-                    // set the reminder and set the cancel reminder button
+                if (item.getIcon().getConstantState().equals(ContextCompat.getDrawable(getActivity(),
+                        R.drawable.ic_access_alarm_white_48dp).getConstantState())) {
+                    //set the reminder and set the cancel reminder button
                     showReminderTimeDialog();
                     item.setIcon(ContextCompat.getDrawable(getActivity(), R.drawable.ic_alarm_off_white_48pt));
-                } else {
-                    if (mReminderDate != 0) {
-                        // cancel the reminder and set the reminder button
-                        Utils.cancelAlarmPendingIntent(getContext(), mListDate, mReminderDate);
-                        item.setIcon(ContextCompat.getDrawable(getActivity(), R.drawable.ic_access_alarm_white_48dp));
-                    }
+                } else if (mReminderDate != 0) {
+                    // cancel the reminder and set the reminder button
+                    Utils.cancelAlarmPendingIntent(getContext(), mListDate, mReminderDate);
+                    item.setIcon(ContextCompat.getDrawable(getActivity(), R.drawable.ic_access_alarm_white_48dp));
                 }
 
 
@@ -148,7 +147,11 @@ public class ListItemsDisplayActivityFragment extends Fragment {
 
 
         }
-        return super.onOptionsItemSelected(item);
+
+        return super.
+
+                onOptionsItemSelected(item);
+
     }
 
     @Override
@@ -216,8 +219,8 @@ public class ListItemsDisplayActivityFragment extends Fragment {
         mAddNewItemEditlist.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                    setActionbarOnEdit();
+                //if (hasFocus)
+                setActionbarOnEdit();
             }
         });
 
@@ -363,7 +366,7 @@ public class ListItemsDisplayActivityFragment extends Fragment {
     // This method sets the action bar on edit
     public void setActionbarOnEdit() {
         //  when clicking edit button only done item should be visible
-        Log.i(Constants.LOG_TAG," in action bar edit ");
+        Log.i(Constants.LOG_TAG, " in action bar edit ");
         if (mActionDelete == null || mActionDone == null || mActionEdit == null)
             return;
         mActionDone.setVisible(true);

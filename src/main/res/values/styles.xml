@@ -2,15 +2,40 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->]
+        <!-- Customize your theme here. -->
+        <!--   your app branding color for the app bar -->
         <item name="colorPrimary">@color/grocery_app_indigo</item>
+        <!--   darker variant for the status bar and contextual app bars -->
         <item name="colorPrimaryDark">@color/grocery_app_dark_indigo</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="android:colorAccent">@color/app_color_accent</item>
+        <!-- Date picker dialog theme  -->
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <!-- Time picker dialog theme -->
+        <item name="android:timePickerDialogTheme">@style/MyTimePickerDialogTheme</item>
+        <item name="colorControlNormal">@color/app_color_accent</item>
+        <item name="colorControlActivated">@color/grocery_app_indigo</item>
+        <item name="colorControlHighlight">@color/grocery_app_indigo</item>
+
+    </style>
+    <!-- Date picker dialog theme -->
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDateTimePickerStyle</item>
+        <item name="android:colorAccent">@color/grocery_app_indigo</item>
+    </style>
+    <style name="MyTimePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:timePickerDialogTheme">@style/MyDateTimePickerStyle</item>
+        <item name="android:colorAccent">@color/grocery_app_indigo</item>
+    </style>
+    <!-- date picker theme -->
+    <style name="MyDateTimePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/grocery_app_indigo</item>
     </style>
     <style name="App_EditTextStyle">
         <item name="android:background">@null</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/default_height</item>
-        <item name ="android:singleLine">true</item>
+        <item name="android:singleLine">true</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
         <item name="android:imeOptions">actionNext</item>
         <item name="android:inputType">textAutoComplete</item>

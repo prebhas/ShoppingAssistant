@@ -58,7 +58,7 @@
                 android:layout_width="fill_parent"
                 android:layout_weight=".75"
 
-                android:hint="@string/add_new_item" />
+                android:hint="Add" />
         </LinearLayout>
 
 

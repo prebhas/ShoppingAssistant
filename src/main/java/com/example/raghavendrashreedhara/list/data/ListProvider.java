@@ -1,16 +1,12 @@
 package com.example.raghavendrashreedhara.list.data;
 
 import android.content.ContentProvider;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
-import android.util.Log;
-
-import com.example.raghavendrashreedhara.list.utility.Constants;
 
 /**
  * Created by raghavendrashreedhara on 5/12/15.
@@ -27,8 +23,7 @@ public class ListProvider extends ContentProvider {
     static {
         sListItemsQueryBuilder = new SQLiteQueryBuilder();
 
-        //This is an inner join which looks like
-        //weather INNER JOIN location ON weather.location_id = location._id
+        //This is an inner join which looks
         sListItemsQueryBuilder.setTables(
                 ListContract.ListEntry.TABLE_NAME + " INNER JOIN " +
                         ListContract.ListItemsEntry.TABLE_NAME +
@@ -131,9 +126,7 @@ public class ListProvider extends ContentProvider {
         Cursor retCursor;
 
         switch (sUriMatcher.match(uri)) {
-            // "weather/*/*"
-
-            // "weather"
+            // return only the list details
             case LIST: {
                 retCursor = mOpenHelper.getReadableDatabase().query(
                         ListContract.ListEntry.TABLE_NAME,
@@ -146,7 +139,7 @@ public class ListProvider extends ContentProvider {
                 );
                 break;
             }
-            // "location"
+            // return only the list item details
             case LIST_ITEMS: {
                 retCursor = mOpenHelper.getReadableDatabase().query(
                         ListContract.ListItemsEntry.TABLE_NAME,
@@ -159,6 +152,7 @@ public class ListProvider extends ContentProvider {
                 );
                 break;
             }
+            // return only the list and list items details
             case LIST_AND_LIST_ITEMS: {
                 retCursor = sListItemsQueryBuilder.query(mOpenHelper.getReadableDatabase(),
                         projection,
@@ -172,7 +166,6 @@ public class ListProvider extends ContentProvider {
 
 
             }
-
 
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
@@ -207,7 +200,6 @@ public class ListProvider extends ContentProvider {
         final int match = sUriMatcher.match(uri);
 
         switch (match) {
-            // Student: Uncomment and fill out these two cases
             case LIST_AND_LIST_ITEMS:
                 return ListContract.ListItemsEntry.CONTENT_TYPE;
             case LIST:
@@ -271,10 +263,8 @@ public class ListProvider extends ContentProvider {
     }
 
     /*
-       Students: Here is where you need to create the UriMatcher. This UriMatcher will
-       match each URI to the WEATHER, WEATHER_WITH_LOCATION, WEATHER_WITH_LOCATION_AND_DATE,
-       and LOCATION integer constants defined above.  You can test this by uncommenting the
-       testUriMatcher test within TestUriMatcher.
+      This UriMatcher will match each URI to the LIST, LIST_ITEMS, LIST_AND_LIST_ITEMS,
+       integer constants defined above.
     */
     static UriMatcher buildUriMatcher() {
         // 1) The code passed into the constructor represents the code to return for the root
@@ -282,8 +272,7 @@ public class ListProvider extends ContentProvider {
         final UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
 
 
-        // 2) Use the addURI function to match each of the types.  Use the constants from
-        // WeatherContract to help define the types to the UriMatcher.
+        // 2) Use the addURI function to match each of the types.  .
         final String authority = ListContract.CONTENT_AUTHORITY;
         // URI for list
         matcher.addURI(authority, ListContract.PATH_LIST, LIST);
@@ -365,14 +354,12 @@ public class ListProvider extends ContentProvider {
      */
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        Log.i(Constants.LOG_TAG, "in update query" + values.get(ListContract.ListEntry.LIST_TITLE));
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         final int match = sUriMatcher.match(uri);
         int rowsUpdated;
 
         switch (match) {
             case LIST:
-                //normalizeDate(values);
                 rowsUpdated = db.update(ListContract.ListEntry.TABLE_NAME, values, selection,
                         selectionArgs);
                 break;
@@ -386,7 +373,6 @@ public class ListProvider extends ContentProvider {
         if (rowsUpdated != 0) {
             getContext().getContentResolver().notifyChange(uri, null);
         }
-        Log.d(Constants.LOG_TAG, " in query :: content provider " + uri + selection + selectionArgs.length+rowsUpdated);
         return rowsUpdated;
     }
 
